@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         SieuNhan(hinh: "anh2", ten: "Sieu nhan do"),
         SieuNhan(hinh: "anh3", ten: "Sieu nhan trang"),
         SieuNhan(hinh: "anh4", ten: "Sieu nhan vang"),
-        SieuNhan(hinh: "anh5", ten: "Sieu nhan xanh")
+        SieuNhan(hinh: "anh5", ten: "Sieu nhan xanh1")
     ]
     
     override func viewDidLoad() {
