@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  SceneAndSague
+//  AutoLayout
 //
 //  Created by Nguyen Duc Chau on 31/03/2022.
 //
@@ -13,8 +13,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
- 
 
 
 }
