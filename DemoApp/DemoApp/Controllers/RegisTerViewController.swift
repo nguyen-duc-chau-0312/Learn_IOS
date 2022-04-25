@@ -40,9 +40,9 @@ class RegisTerViewController: UIViewController {
         if txtUsername.text?.isEmpty == true || txtPassword.text?.isEmpty == true ||
             txtConfirmPassword.text?.isEmpty == true  {
             
-            let alertController = UIAlertController(title: "Alert", message: "Please enter all details", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alert", message: "Vui lòng nhập đủ các trường.", preferredStyle: .alert)
             
-            let action = UIAlertAction(title: "Okay", style: .default) {
+            let action = UIAlertAction(title: "Đồng ý", style: .default) {
                 (action: UIAlertAction) in
             }
             
@@ -67,7 +67,7 @@ class RegisTerViewController: UIViewController {
                 //                userDefaults.set(txtPassword.text, forKey: "Password")
                 //                userDefaults.set(txtConfirmPassword.text, forKey: "ConfirmPassword")
                 
-                let alertController = UIAlertController(title: "Alert", message: "Successfully Registrated...", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Alert", message: "Đăng ký thành công", preferredStyle: .alert)
                 
                 let action = UIAlertAction(title: "Okay", style: .default) {
                     (action: UIAlertAction) in
@@ -79,9 +79,9 @@ class RegisTerViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
                 
             } else {
-                let alertController = UIAlertController(title: "Alert", message: "Your password and confirmation password do not match ", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Alert", message: "Bạn phải nhập password trùng nhau!", preferredStyle: .alert)
                 
-                let action = UIAlertAction(title: "Okay", style: .default) {
+                let action = UIAlertAction(title: "Đồng ý", style: .default) {
                     (action: UIAlertAction) in
                 }
                 

@@ -7,47 +7,80 @@
 
 import UIKit
 
-class ImageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
-    private let collectionView = UICollectionView(
-        frame: .zero, collectionViewLayout: UICollectionViewLayout()
-    )
+class ImageViewController: UIViewController{
+    @IBOutlet weak var myCollectionView: UICollectionView!
+    
+    var myData: [Data] = [
+        Data(name: "Danh Bạ", avatar: "danhba"),
+        Data(name: "Máy Ảnh", avatar: "mayanh"),
+        Data(name: "Trang Web", avatar: "trangweb")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        view.addSubview(collectionView)
+        
+        title = "Home"
+        
+        let nibCell = UINib(nibName: "MyCollectionCell", bundle: nil )
+        self.myCollectionView.register(nibCell, forCellWithReuseIdentifier: "cell")
+        
+    }
 
-        // Do any additional setup after loading the view.
+}
+
+extension ImageViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if indexPath == [0,2] {
+            let websiteVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "websiteVC") as! WebSiteViewController
+            self.navigationController?.pushViewController(websiteVC, animated: true)
+        } else if indexPath == [0,0] {
+            let contactVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ContactVC") as! ContactViewController
+            self.navigationController?.pushViewController(contactVC, animated: true)
+        } else if indexPath == [0,1] {
+            let cameraVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "CameraVC") as! CameraViewController
+            self.navigationController?.pushViewController(cameraVC, animated: true)
+        }
+            
+        
+        
+        
+        
+//        print(indexPath)
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        collectionView.frame = view.bounds
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath)
         
+        let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MyCollectionCell
+        var item = myData[indexPath.row]
+        cell.lblNameImage.text = item.name
+        cell.myImage.image = UIImage(named: item.avatar)
         return cell
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return myData.count
     }
-    */
-
+    
+    //Kich thuoc cell
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenWidth = UIScreen.main.bounds.width - 10
+        return CGSize(width: screenWidth/3, height: (screenWidth/3)*5/4)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
 }
+

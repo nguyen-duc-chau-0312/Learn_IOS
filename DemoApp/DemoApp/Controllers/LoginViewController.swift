@@ -47,9 +47,9 @@ class LoginViewController: UIViewController {
     @IBAction func LoginPressed(_ sender: UIButton) {
         if txtUsername.text?.isEmpty == true || txtPassword.text?.isEmpty == true {
             
-            let alertController = UIAlertController(title: "Alert", message: "Please enter username & password", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Alert", message: "Vui lòng nhập username & password", preferredStyle: .alert)
             
-            let action = UIAlertAction(title: "Okay", style: .default) {
+            let action = UIAlertAction(title: "Đồng ý", style: .default) {
                 (action: UIAlertAction) in
             }
             
@@ -65,7 +65,7 @@ class LoginViewController: UIViewController {
                 }
             }
             if(check){
-                let alertController = UIAlertController(title: "Alert", message: "Successfully Login", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Alert", message: "Đăng nhập thành công", preferredStyle: .alert)
                 let action = UIAlertAction(title: "Okay", style: .default) {
                     (action: UIAlertAction) in
                 }
@@ -76,43 +76,15 @@ class LoginViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
                 
             }else {//bao loi
-                let alertController = UIAlertController(title: "Alert", message: "Username & Password is wrong", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Alert", message: "Username hoặc Password không đúng", preferredStyle: .alert)
                 
-                let action = UIAlertAction(title: "Okay", style: .default) {
+                let action = UIAlertAction(title: "Đồng ý", style: .default) {
                     (action: UIAlertAction) in
                 }
                 
                 alertController.addAction(action)
                 self.present(alertController, animated: true, completion: nil)
             }
-            //            var check = false
-            //            for user in self.userArray {
-            //                if (txtUsername.text == user.userName && txtPassword.text == user.password) {
-            //                    let alertController = UIAlertController(title: "Alert", message: "Successfully Login", preferredStyle: .alert)
-            //                    let action = UIAlertAction(title: "Okay", style: .default) {
-            //                        (action: UIAlertAction) in
-            //                    }
-            //
-            //                    ImageVC()
-            //
-            //                    alertController.addAction(action)
-            //                    self.present(alertController, animated: true, completion: nil)
-            //
-            //
-            //                } else {
-            //                    let alertController = UIAlertController(title: "Alert", message: "Username & Password is wrong", preferredStyle: .alert)
-            //
-            //                    let action = UIAlertAction(title: "Okay", style: .default) {
-            //                        (action: UIAlertAction) in
-            //                    }
-            //
-            //                    alertController.addAction(action)
-            //                    self.present(alertController, animated: true, completion: nil)
-            //                }
-            //
-            
-            
-            
         }
     }
     

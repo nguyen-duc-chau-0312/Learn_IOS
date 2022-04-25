@@ -38,6 +38,7 @@
                 <constraint firstItem="BMO-FL-8UO" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="AfN-5R-yY7"/>
                 <constraint firstItem="BMO-FL-8UO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="n9a-Tc-cl9"/>
             </constraints>
+            <nil key="simulatedTopBarMetrics"/>
             <point key="canvasLocation" x="131.8840579710145" y="77.678571428571431"/>
         </view>
     </objects>
