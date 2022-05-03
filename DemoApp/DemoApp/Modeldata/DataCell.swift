@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Data {
+final class DataCell {
     var name: String
     var avatar: String
     

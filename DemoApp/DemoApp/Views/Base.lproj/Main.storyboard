@@ -20,7 +20,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sd9-GJ-mwf" userLabel="ViewDangNhap">
                                 <rect key="frame" x="52" y="372.5" width="310.5" height="151"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fjj-AY-1KR">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="chau" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fjj-AY-1KR">
                                         <rect key="frame" x="10" y="10" width="290.5" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="9JD-M6-MqP"/>
@@ -28,10 +28,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rg5-fB-47y">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1234" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rg5-fB-47y">
                                         <rect key="frame" x="10" y="60" width="290.5" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3sm-jN-ahl">
                                         <rect key="frame" x="10" y="114" width="130.5" height="17"/>
@@ -161,10 +161,10 @@
             </objects>
             <point key="canvasLocation" x="1836" y="858"/>
         </scene>
-        <!--Contact View Controller-->
+        <!--To Do List View Controller-->
         <scene sceneID="49h-uT-ROH">
             <objects>
-                <viewController storyboardIdentifier="ContactVC" id="pJh-TQ-aOm" customClass="ContactViewController" customModule="DemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactVC" id="pJh-TQ-aOm" customClass="ToDoListViewController" customModule="DemoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FhX-uy-ehE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -211,6 +211,7 @@
                     </view>
                     <connections>
                         <outlet property="myTable" destination="qES-rv-O3n" id="fcH-zX-Efb"/>
+                        <outlet property="tableView" destination="qES-rv-O3n" id="Jii-YW-YNP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3dv-T3-APt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -257,6 +258,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4K-5K-8te" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3900" y="858"/>
+        </scene>
+        <!--To Do List View Controller-->
+        <scene sceneID="TVf-KZ-OpM">
+            <objects>
+                <viewController storyboardIdentifier="ToDoList" id="qOa-fg-hlN" customClass="ToDoListViewController" customModule="DemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q8c-nA-32O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dJy-oe-6O9">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="1Ha-0H-DdB">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Ha-0H-DdB" id="5FE-jv-nxQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="23l-F7-jYs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dJy-oe-6O9" firstAttribute="leading" secondItem="23l-F7-jYs" secondAttribute="leading" id="8lS-8k-9uR"/>
+                            <constraint firstItem="23l-F7-jYs" firstAttribute="trailing" secondItem="dJy-oe-6O9" secondAttribute="trailing" id="Ewi-m9-uEg"/>
+                            <constraint firstItem="dJy-oe-6O9" firstAttribute="top" secondItem="23l-F7-jYs" secondAttribute="top" id="MYs-Q1-rqT"/>
+                            <constraint firstItem="23l-F7-jYs" firstAttribute="bottom" secondItem="dJy-oe-6O9" secondAttribute="bottom" id="gAh-Mp-wvM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="dJy-oe-6O9" id="RIE-EN-zZc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RDg-CL-cFJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5007" y="871"/>
         </scene>
         <!--Register-->
         <scene sceneID="3Gc-7b-01g">

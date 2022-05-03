@@ -10,10 +10,10 @@ import UIKit
 class ImageViewController: UIViewController{
     @IBOutlet weak var myCollectionView: UICollectionView!
     
-    var myData: [Data] = [
-        Data(name: "Danh Bạ", avatar: "danhba"),
-        Data(name: "Máy Ảnh", avatar: "mayanh"),
-        Data(name: "Trang Web", avatar: "trangweb")
+    var myData: [DataCell] = [
+        DataCell(name: "Danh Bạ", avatar: "danhba"),
+        DataCell(name: "Máy Ảnh", avatar: "mayanh"),
+        DataCell(name: "Trang Web", avatar: "trangweb")
     ]
     
     override func viewDidLoad() {
@@ -39,7 +39,7 @@ extension ImageViewController: UICollectionViewDataSource, UICollectionViewDeleg
             let contactVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ContactVC") as! ContactViewController
             self.navigationController?.pushViewController(contactVC, animated: true)
         } else if indexPath == [0,1] {
-            let cameraVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "CameraVC") as! CameraViewController
+            let cameraVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ToDoList") as! ToDoListViewController
             self.navigationController?.pushViewController(cameraVC, animated: true)
         }
             
